@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+      box-sizing: border-box;
+      font-family: "Montserrat", sans-serif;
+    }
+    header {
+      background-color: black;
+      color: aliceblue;
+      height: 60px;
+      line-height: 60px;
+      width: 100%;
+      padding: 5px;
+      position: fixed;
+      z-index: 100;
+    }
+    nav {
+      float: right;
+      display: inline-block;
+      margin-left: 5%;
+      text-align: right;
+    }
+    .logo {
+      height: 30px;
+    }
+    nav a {
+      text-decoration: none;
+      color: white;
+      margin: 5px;
+    }
+    .sites {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+      width: 100%;
+      text-align: center;
+    }
+    .backround {
+      overflow: hidden;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      background-image: linear-gradient(#d99090, #FFC997);
+      z-index: -1;
+      width: 100vw;
+      height: 100vh;
+    }
+    .triangle {
+      top: 100px;
+      right: 48%;
+      position: absolute;
+      animation: movee 3s infinite alternate ease-in-out;
+    }
+    .circle1 {
+      position: absolute;
+      top: -90px;
+      left: -10px;
+      height: 300px;
+      z-index: 1;
+      animation: drift 4s ease-in-out infinite alternate;
+    }
+    .circle2 {
+      position: absolute;
+      top: -90px;
+      right: -10px;
+      height: 300px;
+      animation: driftt 4s ease-in-out linear infinite;
+    }
+    .circle3 {
+      bottom: -50px;
+      position: absolute;
+      animation: mooove 3s ease-in-out infinite alternate;
+      left: -70px;
+    }
+    .circle-bordered {
+      position: absolute;
+      bottom: -30px;
+      left: 100px;
+      z-index: 1;
+      animation: move 5s infinite alternate ease-in-out;
+    }
+    .octagon {
+      position: absolute;
+      bottom: 150px;
+      left: 670px;
+      animation: moveAndSpin 5s infinite alternate ease-in-out;
+    }
+    .circle-dashed-border {
+      position: absolute;
+      right: -100px;
+      bottom: -150px;
+      z-index: 0;
+      animation: spin 10s linear infinite;
+    }
+    h1 {
+      font-size: 60px;
+      transform: translateY(280px);
+      color: white;
+      text-shadow: 5px 5px 0px #b96e6e;
+    }
+    .btn {
+      display: inline-block;
+      transform: translateY(300px);
+      color: black;
+      background-color: white;
+      box-shadow: 5px 5px 0px #b96e6e;
+      padding: 16px;
+      text-decoration: none;
+      border-radius: 25px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 36px;
+    }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding-top: 60px;
+    }
+    .about {
+      padding: 60px;
+    }
+    .about p {
+      line-height: 25px;
+    }
+    .left {
+      width: 48%;
+      margin: 1%;
+      display: inline-block;
+      line-height: 25px;
+      vertical-align: top;
+    }
+    .right {
+      display: inline-block;
+      width: 49%;
+      vertical-align: top;
+    }
+    .right img {
+      height: 300px;
+    }
+    .doing {
+      background: linear-gradient(7deg, #DB7E7E 15.07%, #FFC997 75%, #FFFFFF 70%);
+    }
+    .services {
+      background: linear-gradient(170deg, #DB7E7E 23%, #FFC997 75%, #FFFFFF 70%);
+    }
+    .doing-text {
+      background-color: white;
+      box-shadow: 5px 5px 0px #b96e6e;
+      padding: 16px;
+      border-radius: 25px;
+    }
+    .services-card {
+      background-color: white;
+      border-radius: 25px;
+      border: 2px solid #FFC997;
+      display: inline-block;
+      width: 30%;
+      text-align: center;
+      margin: 10px;
+    }
+    hr {
+      width: 35%;
+      margin: auto;
+      background-color: #DB7E7E;
+      height: 2px;
+      border: none;
+    }
+    h3 {
+      margin: 10px;
+    }
+    .services-card p {
+      margin-top: 10px;
+      margin-bottom: 40px;
+    }
+    .adv-card {
+      margin: auto;
+      border: 2px solid #FFC997;
+      box-shadow: 5px 5px 0px #b96e6e;
+      width: 500px;
+      border-radius: 10px;
+      line-height: 25px;
+      padding: 15px;
+      margin-bottom: 25px;
+      background-color: white;
+    }
+    .first {
+      position: relative;
+      left: -30px;
+    }
+    .second {
+      position: relative;
+      right: -60px;
+    }
+    li {
+      margin-left: 15px;
+    }
+    .advantages_bg_1 {
+      position: absolute;
+      right: 0;
+      width: 500px;
+      bottom: -180px;
+    }
+    .advantages_bg_2 {
+      position: absolute;
+      position: sticky;
+      left: 0;
+      display: inline-block;
+      top: 80px;
+      width: 250px;
+    }
+    .adv-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -2;
+      width: 100%;
+      height: 100%;
+    }
+    .advantages {
+      position: relative;
+    }
+    .card1 {
+      background-image: url(img/portfolio/site1.png);
+    }
+    .card2 {
+      background-image: url(img/portfolio/site2.png);
+    }
+    .card3 {
+      background-image: url(img/portfolio/site3.png);
+    }
+    .card4 {
+      background-image: url(img/portfolio/site4.png);
+    }
+    .portfolio {
+      border-radius: 15px;
+      border: 3px solid #DB7E7E;
+      width: 400px;
+      height: 200px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      display: inline-block;
+    }
+    .portfolio-cards {
+      width: fit-content;
+      margin: auto;
+    }
+    .support {
+      background-image: linear-gradient(#d99090, #FFC997);
+      text-align: center;
+      margin-top: 40px;
+      padding-bottom: 20px;
+    }
+    button {
+      border-radius: 30px;
+      background-color: white;
+      box-shadow: 5px 5px 0px #b96e6e;
+      text-align: center;
+      padding: 15px 50px;
+      border: none;
+      margin-bottom: 20px;
+    }
+    @keyframes mooove {
+      0% {transform: translateY(0px);}
+      100% {transform: translateY(-70px);}
+    }
+    @keyframes driftt {
+      0% { transform: translate(0px, 0px); }
+      100% { transform: translate(-50px, 100px); }
+    }
+    @keyframes drift {
+      0% { transform: translate(0px, 0px); }
+      100% { transform: translate(50px, 100px); }
+    }
+    @keyframes move {
+      0% {transform: translateX(100px);}
+      100% {transform: translateX(270px);}
+    }
+    @keyframes moveAndSpin {
+      0% { transform: translate(0px, 0px) rotate(0deg); }
+      100% { transform: translate(30px, 100px) rotate(360deg); }
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    @keyframes movee {
+      0% {transform: translateX(100px);}
+      100% {transform: translateX(200px);}
+    }
+    @media(max-width:768px) {
+      header {
+        height: fit-content;
+      }
+      .logo {
+        display: block;
+      }
+      nav a {
+        display: block;
+        margin: 0px;
+      }
+      nav {
+        float: left;
+        margin-left: 0;
+      }
+      .sites {
+        transform: translateY(200px);
+      }
+      .first {
+        left: 0;
+      }
+      .second {
+        right: 0;
+      }
+      .services-card {
+        display: block;
+        width: 90%;
+      }
+      .adv-card {
+        width: 90%;
+      }
+      .portfolio-cards {
+        margin: 0;
+        width: 100%;
+      }
+      .left {
+        display: block;
+        width: 90%;
+      }
+      .right {
+        display: block;
+        width: 90%;
+      }
+      .portfolio {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="img/logo.svg" alt="" class="logo" /></a>
+        <nav>
+          <a href="#about">Über uns</a>
+          <a href="#doing">Was wir tun</a>
+          <a href="#services">Dienstleistungen</a>
+          <a href="#advantages">Vorteile</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#contact">Kontakt</a>
+        </nav>
+      </header>
+    
+      <div class="sites">
+        <h1>Wir erstellen Webseiten</h1>
+        <a href="#about" class="btn">Lerne uns kennen</a>
+        <div class="backround">
+          <img class="circle-bordered" src="img/background/circle-bordered.svg" alt="" />
+          <img class="circle-dashed-border" src="img/background/circle-dashed-border.svg" />
+          <img class="circle1" src="img/background/circle1.svg" alt="" />
+          <img class="circle2" src="img/background/circle2.svg" alt="" />
+          <img class="octagon" src="img/background/octagon.svg" alt="" />
+          <img class="triangle" src="img/background/triangle.svg" alt="" />
+          <img class="circle3" src="img/background/circle3.svg" alt="" />
+        </div>
+      </div>
+    
+      <div class="about" id="about">
+        <div class="container">
+          <h2>Über uns</h2>
+          <p>Unsere Agentur ist auf die Erstellung und Betreuung von Webseiten spezialisiert. Sie können bei uns sowohl die komplette Entwicklung als auch die Weiterentwicklung bestehender Seiten in Auftrag geben.  
+            Wir verfügen über langjährige Erfahrung und gute Bewertungen. Wir arbeiten stets qualitativ hochwertig und termingerecht – zu einem der günstigsten Preise auf dem Markt.</p>
+        </div>
+      </div>
+    
+      <div class="doing" id="doing">
+        <div class="container">
+          <div class="left">
+            <h2>Was machen wir?</h2>
+            <p class="doing-text">Wenn Sie sich an uns wenden, können Sie sich auf eine hervorragende Website verlassen. Wir bieten einen vollständigen Entwicklungszyklus an – vom Design über die Entwicklung bis zur Übergabe.  
+            Wir erstellen individuelle Designs nach Ihren Vorstellungen, setzen diese technisch um und begleiten Sie bei Bedarf während des gesamten Lebenszyklus Ihrer Website.</p>
+          </div>
+          <div class="right">
+            <img src="img/background/pic.svg" alt="" />
+          </div>
+        </div>
+      </div>
+    
+      <div class="services" id="services">
+        <div class="container">
+          <h2>Unsere Hauptdienstleistungen</h2>
+          <div class="services-card">
+            <img src="img/icons/design.svg" alt="" />
+            <h3>Webdesign</h3>
+            <hr />
+            <p>Design-Entwurf basierend auf Ihren Wünschen</p>
+          </div>
+          <div class="services-card">
+            <img src="img/icons/development.svg" alt="" />
+            <h3>Frontend-Entwicklung</h3>
+            <hr />
+            <p>Umsetzung des Designs in funktionalen Code</p>
+          </div>
+          <div class="services-card">
+            <img src="img/icons/support.svg" alt="" />
+            <h3>Support</h3>
+            <hr />
+            <p>Technischer Support und Website-Betreuung</p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="advantages" id="advantages">
+        <div class="container">
+          <h2>Warum wir?</h2>
+          <div class="adv-card first">
+            <h4><b>Im Design</b></h4>
+            <ul>
+              <li>Erfahrenes Designteam</li>
+              <li>Liebe zum Detail</li>
+              <li>Kreative Ideenfilterung</li>
+            </ul>
+          </div>
+          <div class="adv-card second">
+            <h4>In der Entwicklung</h4>
+            <ul>
+              <li>Große Sammlung eigener Bibliotheken und Plugins</li>
+              <li>Sauberer, skalierbarer Code</li>
+              <li>Durchdachte Seitenarchitektur</li>
+            </ul>
+    </div>
+          <div class="adv-card third">
+            <h4>Im Support</h4>
+            <ul>
+              <li>Freundlichster technischer Support</li>
+              <li>24/7 Erreichbarkeit</li>
+              <li>Langfristiger Support wird günstiger</li>
+            </ul>
+          </div>
+        </div>
+        <div class="adv-background">
+          <img class="advantages_bg_2" src="img/background/advantages_bg_2.svg" alt="" />
+          <img class="advantages_bg_1" src="img/background/advantages_bg_1.svg" alt="" />
+        </div>
+      </div>
+    
+      <div class="portfolio-section" id="portfolio">
+        <div class="container">
+          <h2>Unsere Arbeiten</h2>
+          <div class="portfolio-cards">
+            <div class="portfolio card1"></div>
+            <div class="portfolio card2"></div>
+            <br />
+            <div class="portfolio card3"></div>
+            <div class="portfolio card4"></div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="support">
+        <div class="container">
+          <h2>Schreiben Sie uns</h2>
+          <button>Kontakt aufnehmen</button>
+        </div>
+      </div>
+    </body>
+    </html> 
+
+</body>
+</html>
